@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTintMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ScrollingActivity"
     tools:showIn="@layout/activity_scrolling">
@@ -47,7 +48,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="By:"
+                    android:text="PublishedBy:"
                     android:textColor="@color/colorPrimaryDark" />
 
                 <TextView
@@ -59,7 +60,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sold by"
+                    android:text="Writer"
                     android:textColor="@color/colorPrimaryDark" />
 
 
@@ -97,20 +98,7 @@
             </LinearLayout>
         </LinearLayout>
         <!-- Preview -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Preview"
-            android:textColor="#FF6A40 "
-            android:textSize="18sp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/previewList"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="16dp"
-            android:scrollbars="horizontal" />
 
         <RatingBar
             android:layout_width="wrap_content"
@@ -136,19 +124,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Written by:"
+                    android:text="Cover Artist:"
                     android:textColor="@color/colorPrimaryDark" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cover by:"
+                    android:text="Penciler:"
                     android:textColor="@color/colorPrimaryDark" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Art by:"
+                    android:text="Price"
                     android:textColor="@color/colorPrimaryDark" />
 
 

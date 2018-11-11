@@ -11,8 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,11 +31,10 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getData();
-        RecyclerView recyclerView = findViewById(R.id.previewList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
     }
+
     private void getData()
 
     {
@@ -41,17 +43,35 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResulList> call, Response<ResulList> response) {
                 ResulList resulList = response.body();
-                String description = resulList.getData().getResults().get(0).getDescription();
 
+//Description
+                String description = resulList.getData().getResults().get(0).getDescription();
                 TextView summary = findViewById(R.id.description);
                 summary.setText(description);
+//Comic Image
+                String image_url = resulList.getData().getResults().get(0).getThumbnail().getPath();
+                ImageView collapsableToolbar = findViewById(R.id.collapsebarimg);
+
+                Glide.with(ScrollingActivity.this)
+                        .load(image_url + "/standard_fantastic.jpg")
+                        .into(collapsableToolbar);
+// Price
+                String price = resulList.getData().getResults().get(0).getPrices().get(0).getPrice().toString();
+//Creators
+                String penciler  = resulList.getData().getResults().get(0).getCreators().getItems().get(3).getName();
+
+                String colorist =resulList.getData().getResults().get(0).getCreators().getItems().get(2).getName();
+
+                String writter = resulList.getData().getResults().get(0).getCreators().getItems().get(5).getName();
 
 
+//Title
+                String seriesName = resulList.getData().getResults().get(0).getTitle();
             }
 
             @Override
             public void onFailure(Call<ResulList> call, Throwable t) {
-                Toast.makeText(ScrollingActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ScrollingActivity.this, "Error", Toast.LENGTH_SHORT).show();
 
 
             }
