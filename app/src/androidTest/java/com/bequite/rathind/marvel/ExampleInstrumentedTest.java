@@ -23,4 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.bequite.rathind.marvel", appContext.getPackageName());
     }
+
 }

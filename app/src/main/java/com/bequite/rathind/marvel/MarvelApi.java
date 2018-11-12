@@ -27,5 +27,6 @@ public class MarvelApi {
         @GET(apikey)
         Call<ResulList> getResultList();
 
+        void showProgressDialog(boolean enableProgressDialog);
     }
 }
