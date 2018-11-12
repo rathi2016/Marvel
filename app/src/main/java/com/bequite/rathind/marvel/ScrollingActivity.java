@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,22 +58,32 @@ public class ScrollingActivity extends AppCompatActivity {
                         .into(collapsableToolbar);
 // Price
                 String price = resulList.getData().getResults().get(0).getPrices().get(0).getPrice().toString();
+                Button comicprice = findViewById(R.id.price);
+                comicprice.setText("$ "+price);
 //Creators
                 String penciler  = resulList.getData().getResults().get(0).getCreators().getItems().get(3).getName();
+                TextView comicPenciler = findViewById(R.id.penciler);
+                comicPenciler.setText(penciler);
 
                 String colorist =resulList.getData().getResults().get(0).getCreators().getItems().get(2).getName();
+                TextView comicColorist = findViewById(R.id.colorist);
+                comicColorist.setText(colorist);
 
                 String writter = resulList.getData().getResults().get(0).getCreators().getItems().get(5).getName();
+                TextView comicWritter = findViewById(R.id.writter);
+                comicWritter.setText(writter);
 
 
 //Title
                 String seriesName = resulList.getData().getResults().get(0).getTitle();
+                TextView comicName = findViewById(R.id.comictitle);
+                comicName.setText(seriesName);
+
             }
 
             @Override
             public void onFailure(Call<ResulList> call, Throwable t) {
                 Toast.makeText(ScrollingActivity.this, "Error", Toast.LENGTH_SHORT).show();
-
 
             }
         });

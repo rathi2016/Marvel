@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTintMode="true"
+    android:background="#221F1F"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ScrollingActivity"
     tools:showIn="@layout/activity_scrolling">
@@ -16,128 +16,92 @@
         android:orientation="vertical">
 
 
-        <!-- personal details -->
         <TextView
+            android:id="@+id/comictitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Summary"
-            android:textColor="#FF6A40 "
-            android:textSize="18sp" />
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="10dp"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
-            android:textColor="#FF6A40 "
+            android:layout_margin="10dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"
             android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-            <!-- left side -->
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp"
+                android:text="Buy Now:"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="PublishedBy:"
-                    android:textColor="@color/colorPrimaryDark" />
+            <Button
+                android:id="@+id/price"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Released"
-                    android:textColor="@color/colorPrimaryDark" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Writer"
-                    android:textColor="@color/colorPrimaryDark" />
-
-
-            </LinearLayout>
-
-
-            <!-- right side -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/by"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/released"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/soldby"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
-
-            </LinearLayout>
         </LinearLayout>
-        <!-- Preview -->
 
 
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:text="Credits"
-            android:textColor="#FF6A40 "
-            android:textSize="18sp" />
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp">
+            android:layout_margin="10dp">
             <!-- left side -->
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cover Artist:"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:text="Writer:"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Penciler:"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Price"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textSize="18sp"
+                    android:text="Colorist:"
+                    android:textColor="@color/colorWhite" />
 
 
             </LinearLayout>
@@ -147,29 +111,30 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/writtenby"
+                    android:id="@+id/writter"
+                    android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/colorWhite" />
 
                 <TextView
-                    android:id="@+id/coverby"
+                    android:id="@+id/penciler"
+                    android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/colorWhite" />
 
                 <TextView
-                    android:id="@+id/artby"
+                    android:id="@+id/colorist"
+                    android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/colorWhite" />
 
             </LinearLayout>
         </LinearLayout>
