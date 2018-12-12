@@ -43,17 +43,11 @@ private List mCallListUserResponse;
                 ResulList resulList = response.body();
 
 
+
 //Description
                 String description = resulList.getData().getResults().get(0).getDescription();
                 TextView summary = findViewById(R.id.description);
                 summary.setText(description);
-//Comic Image
-                String image_url = resulList.getData().getResults().get(0).getThumbnail().getPath();
-                ImageView collapsableToolbar = findViewById(R.id.collapsebarimg);
-
-                Glide.with(ScrollingActivity.this)
-                        .load(image_url + "/standard_fantastic.jpg")
-                        .into(collapsableToolbar);
 // Price
                 String price = resulList.getData().getResults().get(0).getPrices().get(0).getPrice().toString();
                 Button comicprice = findViewById(R.id.price);
